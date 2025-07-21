@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"cancelProductOrder_order.Id_post[1.1:46]","start":1753092156164,"end":1753092156772,"title":"cancelProductOrder_order.Id_post[1.1:46] 10:02:36.164-10:02:36.772 Cancel Product Order By Id - Valid Request","className":"failed"},{"id":2,"group":1,"content":"cancelProductOrder_order.Id_post[2.1:76]","start":1753092156783,"end":1753092156829,"title":"cancelProductOrder_order.Id_post[2.1:76] 10:02:36.783-10:02:36.829 Cancel Product Order By Id - Invalid Request","className":"failed"},{"id":3,"group":1,"content":"cancelProductOrder_order.Id_post[3.1:106]","start":1753092156834,"end":1753092156854,"title":"cancelProductOrder_order.Id_post[3.1:106] 10:02:36.834-10:02:36.854 Cancel Product Order By Id - Unauthorized","className":"failed"},{"id":4,"group":1,"content":"cancelProductOrder_order.Id_post[4.1:136]","start":1753092156860,"end":1753092156877,"title":"cancelProductOrder_order.Id_post[4.1:136] 10:02:36.860-10:02:36.877 Cancel Product Order By Id - Forbidden","className":"failed"},{"id":5,"group":1,"content":"cancelProductOrder_order.Id_post[5.1:166]","start":1753092156881,"end":1753092156896,"title":"cancelProductOrder_order.Id_post[5.1:166] 10:02:36.881-10:02:36.896 Cancel Product Order By Id - Not Found","className":"failed"},{"id":6,"group":1,"content":"cancelProductOrder_order.Id_post[6.1:196]","start":1753092156901,"end":1753092156914,"title":"cancelProductOrder_order.Id_post[6.1:196] 10:02:36.901-10:02:36.914 Cancel Product Order By Id - Not Acceptable","className":"failed"},{"id":7,"group":1,"content":"cancelProductOrder_order.Id_post[7.1:226]","start":1753092156919,"end":1753092156931,"title":"cancelProductOrder_order.Id_post[7.1:226] 10:02:36.919-10:02:36.931 Cancel Product Order By Id - Locked","className":"failed"},{"id":8,"group":1,"content":"cancelProductOrder_order.Id_post[8.1:256]","start":1753092156936,"end":1753092156948,"title":"cancelProductOrder_order.Id_post[8.1:256] 10:02:36.936-10:02:36.948 Cancel Product Order By Id - Too Many Requests","className":"failed"},{"id":9,"group":1,"content":"cancelProductOrder_order.Id_post[9.1:286]","start":1753092156953,"end":1753092156963,"title":"cancelProductOrder_order.Id_post[9.1:286] 10:02:36.953-10:02:36.963 Cancel Product Order By Id - Internal Server Error","className":"failed"},{"id":10,"group":1,"content":"cancelProductOrder_order.Id_post[10.1:316]","start":1753092156968,"end":1753092156977,"title":"cancelProductOrder_order.Id_post[10.1:316] 10:02:36.968-10:02:36.977 Cancel Product Order By Id - Service Unavailable","className":"failed"},{"id":11,"group":1,"content":"cancelProductOrder_order.Id_post[11.1:346]","start":1753092156983,"end":1753092156991,"title":"cancelProductOrder_order.Id_post[11.1:346] 10:02:36.983-10:02:36.991 Cancel Product Order By Id - Gateway Timeout","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
